@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5B339917028982C3B923772A /* Pods_stocks_cake.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F900F636DA0E36FAAE066903 /* Pods_stocks_cake.framework */; };
 		A40C40222038687D004ECCE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40C40212038687D004ECCE7 /* AppDelegate.swift */; };
-		A40C40242038687D004ECCE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40C40232038687D004ECCE7 /* ViewController.swift */; };
+		A40C40242038687D004ECCE7 /* CakeLandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40C40232038687D004ECCE7 /* CakeLandingViewController.swift */; };
 		A40C40272038687D004ECCE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40C40252038687D004ECCE7 /* Main.storyboard */; };
 		A40C40292038687D004ECCE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A40C40282038687D004ECCE7 /* Assets.xcassets */; };
 		A40C402C2038687D004ECCE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40C402A2038687D004ECCE7 /* LaunchScreen.storyboard */; };
@@ -19,7 +19,7 @@
 		5E35AEB19507B8002E35EC44 /* Pods-stocks-cake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stocks-cake.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stocks-cake/Pods-stocks-cake.debug.xcconfig"; sourceTree = "<group>"; };
 		A40C401E2038687D004ECCE7 /* stocks-cake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "stocks-cake.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40C40212038687D004ECCE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		A40C40232038687D004ECCE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A40C40232038687D004ECCE7 /* CakeLandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeLandingViewController.swift; sourceTree = "<group>"; };
 		A40C40262038687D004ECCE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A40C40282038687D004ECCE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A40C402B2038687D004ECCE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -79,7 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				A40C40212038687D004ECCE7 /* AppDelegate.swift */,
-				A40C40232038687D004ECCE7 /* ViewController.swift */,
+				A40C40232038687D004ECCE7 /* CakeLandingViewController.swift */,
 				A40C40252038687D004ECCE7 /* Main.storyboard */,
 				A40C40282038687D004ECCE7 /* Assets.xcassets */,
 				A40C402A2038687D004ECCE7 /* LaunchScreen.storyboard */,
@@ -219,7 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A40C40242038687D004ECCE7 /* ViewController.swift in Sources */,
+				A40C40242038687D004ECCE7 /* CakeLandingViewController.swift in Sources */,
 				A40C40222038687D004ECCE7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
