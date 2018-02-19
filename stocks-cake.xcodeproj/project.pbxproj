@@ -1,0 +1,412 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B339917028982C3B923772A /* Pods_stocks_cake.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F900F636DA0E36FAAE066903 /* Pods_stocks_cake.framework */; };
+		A40C40222038687D004ECCE7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40C40212038687D004ECCE7 /* AppDelegate.swift */; };
+		A40C40242038687D004ECCE7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A40C40232038687D004ECCE7 /* ViewController.swift */; };
+		A40C40272038687D004ECCE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40C40252038687D004ECCE7 /* Main.storyboard */; };
+		A40C40292038687D004ECCE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A40C40282038687D004ECCE7 /* Assets.xcassets */; };
+		A40C402C2038687D004ECCE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40C402A2038687D004ECCE7 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5E35AEB19507B8002E35EC44 /* Pods-stocks-cake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stocks-cake.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stocks-cake/Pods-stocks-cake.debug.xcconfig"; sourceTree = "<group>"; };
+		A40C401E2038687D004ECCE7 /* stocks-cake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "stocks-cake.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		A40C40212038687D004ECCE7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A40C40232038687D004ECCE7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		A40C40262038687D004ECCE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A40C40282038687D004ECCE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A40C402B2038687D004ECCE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A40C402D2038687D004ECCE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC7A35AB60524F584FA13D43 /* Pods-stocks-cake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stocks-cake.release.xcconfig"; path = "Pods/Target Support Files/Pods-stocks-cake/Pods-stocks-cake.release.xcconfig"; sourceTree = "<group>"; };
+		F900F636DA0E36FAAE066903 /* Pods_stocks_cake.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stocks_cake.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A40C401B2038687D004ECCE7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B339917028982C3B923772A /* Pods_stocks_cake.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		18EBE5D97054DE1260ECBB64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F900F636DA0E36FAAE066903 /* Pods_stocks_cake.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6F971F44845C16E59317F075 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5E35AEB19507B8002E35EC44 /* Pods-stocks-cake.debug.xcconfig */,
+				AC7A35AB60524F584FA13D43 /* Pods-stocks-cake.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		A40C40152038687D004ECCE7 = {
+			isa = PBXGroup;
+			children = (
+				A40C40202038687D004ECCE7 /* stocks-cake */,
+				A40C401F2038687D004ECCE7 /* Products */,
+				6F971F44845C16E59317F075 /* Pods */,
+				18EBE5D97054DE1260ECBB64 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		A40C401F2038687D004ECCE7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A40C401E2038687D004ECCE7 /* stocks-cake.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A40C40202038687D004ECCE7 /* stocks-cake */ = {
+			isa = PBXGroup;
+			children = (
+				A40C40212038687D004ECCE7 /* AppDelegate.swift */,
+				A40C40232038687D004ECCE7 /* ViewController.swift */,
+				A40C40252038687D004ECCE7 /* Main.storyboard */,
+				A40C40282038687D004ECCE7 /* Assets.xcassets */,
+				A40C402A2038687D004ECCE7 /* LaunchScreen.storyboard */,
+				A40C402D2038687D004ECCE7 /* Info.plist */,
+			);
+			path = "stocks-cake";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A40C401D2038687D004ECCE7 /* stocks-cake */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A40C40302038687D004ECCE7 /* Build configuration list for PBXNativeTarget "stocks-cake" */;
+			buildPhases = (
+				618A5F26132CD9EBCE52C2C3 /* [CP] Check Pods Manifest.lock */,
+				A40C401A2038687D004ECCE7 /* Sources */,
+				A40C401B2038687D004ECCE7 /* Frameworks */,
+				A40C401C2038687D004ECCE7 /* Resources */,
+				1E83BF35FB71483664E3921D /* [CP] Embed Pods Frameworks */,
+				4FD0AC7103D12A04EA807DB2 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "stocks-cake";
+			productName = "stocks-cake";
+			productReference = A40C401E2038687D004ECCE7 /* stocks-cake.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A40C40162038687D004ECCE7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = shravan;
+				TargetAttributes = {
+					A40C401D2038687D004ECCE7 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = A40C40192038687D004ECCE7 /* Build configuration list for PBXProject "stocks-cake" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A40C40152038687D004ECCE7;
+			productRefGroup = A40C401F2038687D004ECCE7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A40C401D2038687D004ECCE7 /* stocks-cake */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A40C401C2038687D004ECCE7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A40C402C2038687D004ECCE7 /* LaunchScreen.storyboard in Resources */,
+				A40C40292038687D004ECCE7 /* Assets.xcassets in Resources */,
+				A40C40272038687D004ECCE7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1E83BF35FB71483664E3921D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-stocks-cake/Pods-stocks-cake-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
+				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-stocks-cake/Pods-stocks-cake-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4FD0AC7103D12A04EA807DB2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-stocks-cake/Pods-stocks-cake-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		618A5F26132CD9EBCE52C2C3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-stocks-cake-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A40C401A2038687D004ECCE7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A40C40242038687D004ECCE7 /* ViewController.swift in Sources */,
+				A40C40222038687D004ECCE7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A40C40252038687D004ECCE7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A40C40262038687D004ECCE7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A40C402A2038687D004ECCE7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A40C402B2038687D004ECCE7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A40C402E2038687D004ECCE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A40C402F2038687D004ECCE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A40C40312038687D004ECCE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E35AEB19507B8002E35EC44 /* Pods-stocks-cake.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 48UFH6Q9SV;
+				INFOPLIST_FILE = "stocks-cake/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "shravan.stocks-cake";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A40C40322038687D004ECCE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC7A35AB60524F584FA13D43 /* Pods-stocks-cake.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 48UFH6Q9SV;
+				INFOPLIST_FILE = "stocks-cake/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "shravan.stocks-cake";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A40C40192038687D004ECCE7 /* Build configuration list for PBXProject "stocks-cake" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A40C402E2038687D004ECCE7 /* Debug */,
+				A40C402F2038687D004ECCE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A40C40302038687D004ECCE7 /* Build configuration list for PBXNativeTarget "stocks-cake" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A40C40312038687D004ECCE7 /* Debug */,
+				A40C40322038687D004ECCE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A40C40162038687D004ECCE7 /* Project object */;
+}
