@@ -15,6 +15,11 @@
 		A40C402C2038687D004ECCE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40C402A2038687D004ECCE7 /* LaunchScreen.storyboard */; };
 		A441BCB2203C1AD0003D0CEF /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441BCB1203C1AD0003D0CEF /* URLManager.swift */; };
 		A441BCB6203C3B40003D0CEF /* StockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441BCB5203C3B40003D0CEF /* StockItem.swift */; };
+		A441BCB9203C8B07003D0CEF /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441BCB8203C8B07003D0CEF /* Utility.swift */; };
+		A441BCBD203C8B9F003D0CEF /* CakeLiveStocksTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441BCBB203C8B9F003D0CEF /* CakeLiveStocksTableViewCell.swift */; };
+		A441BCBE203C8B9F003D0CEF /* CakeLiveStocksTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A441BCBC203C8B9F003D0CEF /* CakeLiveStocksTableViewCell.xib */; };
+		A441BCC2203CA22A003D0CEF /* CakeHistoricalTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441BCC0203CA229003D0CEF /* CakeHistoricalTableViewCell.swift */; };
+		A441BCC3203CA22A003D0CEF /* CakeHistoricalTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A441BCC1203CA22A003D0CEF /* CakeHistoricalTableViewCell.xib */; };
 		A496E44F203C13BC00A81E63 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A496E44E203C13BC00A81E63 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +34,11 @@
 		A40C402D2038687D004ECCE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A441BCB1203C1AD0003D0CEF /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
 		A441BCB5203C3B40003D0CEF /* StockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItem.swift; sourceTree = "<group>"; };
+		A441BCB8203C8B07003D0CEF /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
+		A441BCBB203C8B9F003D0CEF /* CakeLiveStocksTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeLiveStocksTableViewCell.swift; sourceTree = "<group>"; };
+		A441BCBC203C8B9F003D0CEF /* CakeLiveStocksTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CakeLiveStocksTableViewCell.xib; sourceTree = "<group>"; };
+		A441BCC0203CA229003D0CEF /* CakeHistoricalTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeHistoricalTableViewCell.swift; sourceTree = "<group>"; };
+		A441BCC1203CA22A003D0CEF /* CakeHistoricalTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CakeHistoricalTableViewCell.xib; sourceTree = "<group>"; };
 		A496E44E203C13BC00A81E63 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		AC7A35AB60524F584FA13D43 /* Pods-stocks-cake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stocks-cake.release.xcconfig"; path = "Pods/Target Support Files/Pods-stocks-cake/Pods-stocks-cake.release.xcconfig"; sourceTree = "<group>"; };
 		F900F636DA0E36FAAE066903 /* Pods_stocks_cake.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_stocks_cake.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -85,10 +95,11 @@
 			isa = PBXGroup;
 			children = (
 				A40C40212038687D004ECCE7 /* AppDelegate.swift */,
-				A40C40232038687D004ECCE7 /* CakeLandingViewController.swift */,
-				A441BCB5203C3B40003D0CEF /* StockItem.swift */,
-				A441BCB3203C20D0003D0CEF /* Network */,
 				A40C40252038687D004ECCE7 /* Main.storyboard */,
+				A40C40232038687D004ECCE7 /* CakeLandingViewController.swift */,
+				A441BCBA203C8B71003D0CEF /* TableView Cells */,
+				A441BCB7203C8AF0003D0CEF /* Utility */,
+				A441BCB3203C20D0003D0CEF /* Network */,
 				A40C40282038687D004ECCE7 /* Assets.xcassets */,
 				A40C402A2038687D004ECCE7 /* LaunchScreen.storyboard */,
 				A40C402D2038687D004ECCE7 /* Info.plist */,
@@ -103,6 +114,42 @@
 				A441BCB1203C1AD0003D0CEF /* URLManager.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		A441BCB7203C8AF0003D0CEF /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				A441BCB5203C3B40003D0CEF /* StockItem.swift */,
+				A441BCB8203C8B07003D0CEF /* Utility.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		A441BCBA203C8B71003D0CEF /* TableView Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A441BCBF203CA1FC003D0CEF /* Live  */,
+				A441BCC4203CA237003D0CEF /* Historical */,
+			);
+			path = "TableView Cells";
+			sourceTree = "<group>";
+		};
+		A441BCBF203CA1FC003D0CEF /* Live  */ = {
+			isa = PBXGroup;
+			children = (
+				A441BCBB203C8B9F003D0CEF /* CakeLiveStocksTableViewCell.swift */,
+				A441BCBC203C8B9F003D0CEF /* CakeLiveStocksTableViewCell.xib */,
+			);
+			path = "Live ";
+			sourceTree = "<group>";
+		};
+		A441BCC4203CA237003D0CEF /* Historical */ = {
+			isa = PBXGroup;
+			children = (
+				A441BCC0203CA229003D0CEF /* CakeHistoricalTableViewCell.swift */,
+				A441BCC1203CA22A003D0CEF /* CakeHistoricalTableViewCell.xib */,
+			);
+			path = Historical;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,7 +215,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A40C402C2038687D004ECCE7 /* LaunchScreen.storyboard in Resources */,
+				A441BCC3203CA22A003D0CEF /* CakeHistoricalTableViewCell.xib in Resources */,
 				A40C40292038687D004ECCE7 /* Assets.xcassets in Resources */,
+				A441BCBE203C8B9F003D0CEF /* CakeLiveStocksTableViewCell.xib in Resources */,
 				A40C40272038687D004ECCE7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -184,12 +233,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-stocks-cake/Pods-stocks-cake-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/Socket.IO-Client-Swift/SocketIO.framework",
 				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SocketIO.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 			);
@@ -240,9 +291,12 @@
 			files = (
 				A496E44F203C13BC00A81E63 /* NetworkManager.swift in Sources */,
 				A40C40242038687D004ECCE7 /* CakeLandingViewController.swift in Sources */,
+				A441BCB9203C8B07003D0CEF /* Utility.swift in Sources */,
+				A441BCBD203C8B9F003D0CEF /* CakeLiveStocksTableViewCell.swift in Sources */,
 				A40C40222038687D004ECCE7 /* AppDelegate.swift in Sources */,
 				A441BCB6203C3B40003D0CEF /* StockItem.swift in Sources */,
 				A441BCB2203C1AD0003D0CEF /* URLManager.swift in Sources */,
+				A441BCC2203CA22A003D0CEF /* CakeHistoricalTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

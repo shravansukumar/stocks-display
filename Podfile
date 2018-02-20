@@ -9,5 +9,6 @@ target 'stocks-cake' do
   # Pods for stocks-cake
 pod 'Socket.IO-Client-Swift', '~> 13.1.0'
 pod 'Alamofire', '~> 4.6'
+pod 'Charts'
 
 end

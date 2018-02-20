@@ -8,21 +8,17 @@
 
 import UIKit
 import SocketIO
-
-extension UIView{
-    func blink() {
-        self.alpha = 0.2
-        UIView.animate(withDuration: 1, delay: 0.0, options: [.curveLinear, .repeat, .autoreverse], animations: {self.alpha = 1.0}, completion: nil)
-    }
-}
+import Charts
 
 class CakeLandingViewController: UIViewController {
+    
+    @IBOutlet var tableView: UITableView!
     
     
     var manager: SocketManager!
     var socket: SocketIOClient!
-    var csvData = [[Any]]()
     var stockItems = [StockItem]()
+    var liveData: String?
     let networkManager = NetworkManager()
 
     override func viewDidLoad() {
@@ -30,8 +26,20 @@ class CakeLandingViewController: UIViewController {
         
         setupSockets()
         fetchData()
+        setupTableView()
+       // setDataCount()
     }
     
+    
+    
+    private func setupTableView() {
+        tableView.registerNib(viewClass: CakeLiveStocksTableViewCell.self)
+        tableView.registerNib(viewClass: CakeHistoricalTableViewCell.self)
+        tableView.tableFooterView = UIView()
+        
+    }
+    
+
     
     private func fetchData() {
         networkManager.request() {
@@ -54,8 +62,19 @@ class CakeLandingViewController: UIViewController {
                 print("error in parsing data")
             }
         }
-        print(stockItems)
+        stockItems.sort { $0.timeStamp < $1.timeStamp }
+       tableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .none)
+        
     }
+    
+    private func parse(_ data: String) {
+        let rows = data.components(separatedBy: ",")
+        liveData = rows[2]
+        tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
+        
+    }
+
+    
     
     private func setupSockets() {
         manager = SocketManager(socketURL: URL(string: "http://kaboom.rksv.net/")!, config: [.log(true), .compress])
@@ -67,6 +86,10 @@ class CakeLandingViewController: UIViewController {
         socket.on("data", callback: { (data, ack) in
             print(data)
             print(ack)
+            
+            if let firstData = data.first as? String {
+                self.parse(firstData)
+            }
             
             DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 1.0) {
                 ack.with(1)
@@ -95,6 +118,33 @@ class CakeLandingViewController: UIViewController {
         })
         socket.connect()
     }
+}
+
+extension CakeLandingViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
     
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch indexPath.row {
+        case 0:
+        let stocksCell = tableView.dequeueReusableCell(tableViewCellClass: CakeLiveStocksTableViewCell.self)
+        if let data = liveData {
+            stocksCell.liveStocksLabel.text = data
+        }
+        return stocksCell
+            
+        default:
+            let graphCell = tableView.dequeueReusableCell(tableViewCellClass: CakeHistoricalTableViewCell.self)
+            if stockItems.count > 0 {
+                graphCell.drawGraph(for: stockItems)
+            }
+            return graphCell
+        }
+    }
 }
 
