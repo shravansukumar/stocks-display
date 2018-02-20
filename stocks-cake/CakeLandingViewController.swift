@@ -28,7 +28,7 @@ class CakeLandingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       // setupSockets()
+        setupSockets()
         fetchData()
     }
     
@@ -57,14 +57,6 @@ class CakeLandingViewController: UIViewController {
         print(stockItems)
     }
     
-    
-    private func parse(_ data: String) {
-        let rows = data.components(separatedBy: ",")
-                
-        csvData.append(rows)
-        print(csvData)
-    }
-    
     private func setupSockets() {
         manager = SocketManager(socketURL: URL(string: "http://kaboom.rksv.net/")!, config: [.log(true), .compress])
         
@@ -76,16 +68,12 @@ class CakeLandingViewController: UIViewController {
             print(data)
             print(ack)
             
-            if let firstData = data.first as? String {
-                self.parse(firstData)
+            DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 1.0) {
+                ack.with(1)
             }
-            
-            
-            ack.with(1)
         })
         
-        
-        
+
         socket.on("error", callback: { (data, ack) in
             print(data)
             print(ack)
@@ -98,18 +86,14 @@ class CakeLandingViewController: UIViewController {
             
         }
         
-        
         socket.on("connect", callback: { (data, ack) in
             print(data)
             print(ack)
 
-
-         //   self.socket.emit("ping", [])
             self.socket.emit("sub", ["state" : true])
 
         })
         socket.connect()
-        
     }
     
 }
