@@ -9,26 +9,46 @@
 import UIKit
 import SocketIO
 
+extension UIView{
+    func blink() {
+        self.alpha = 0.2
+        UIView.animate(withDuration: 1, delay: 0.0, options: [.curveLinear, .repeat, .autoreverse], animations: {self.alpha = 1.0}, completion: nil)
+    }
+}
+
 class CakeLandingViewController: UIViewController {
+    
+    @IBOutlet var testLabel: UILabel!
     
     var manager: SocketManager!
     var socket: SocketIOClient!
     var csvData = [[Any]]()
+    let networkManager = NetworkManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupSockets()
+       // setupSockets()
+        fetchData()
     }
     
-    private func parse(data: String) {
-        var rowData = [Any]()
-        
-        
-        
-        
-        
+    
+    private func fetchData() {
+        networkManager.request() {
+            success, result in
+            if success {
+                print(result)
+            }
+        }
+    }
+    
+    private func parse(_ data: String) {
         let rows = data.components(separatedBy: ",")
+        testLabel.text = ""
+        
+        testLabel.blink()
+        testLabel.text = rows[3]
+        
         csvData.append(rows)
         print(csvData)
     }
@@ -44,14 +64,12 @@ class CakeLandingViewController: UIViewController {
             print(data)
             print(ack)
             
-            if let data = data as? [Any] {
-                if let firstData = data.first as? String {
-                    self.parse(data: firstData)
-                }
+            if let firstData = data.first as? String {
+                self.parse(firstData)
             }
             
-            ack.with(1)
             
+            ack.with(1)
         })
         
         
