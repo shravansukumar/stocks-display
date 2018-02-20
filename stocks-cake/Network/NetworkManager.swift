@@ -22,7 +22,6 @@ class NetworkManager {
                                     switch response.result {
                                     case .success(let response):
                                         if let json = response as? [Any] {
-                                            print(json)
                                             return serverResponse(true, json)
                                         }
                                         

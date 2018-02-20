@@ -18,11 +18,11 @@ extension UIView{
 
 class CakeLandingViewController: UIViewController {
     
-    @IBOutlet var testLabel: UILabel!
     
     var manager: SocketManager!
     var socket: SocketIOClient!
     var csvData = [[Any]]()
+    var stockItems = [StockItem]()
     let networkManager = NetworkManager()
 
     override func viewDidLoad() {
@@ -37,18 +37,30 @@ class CakeLandingViewController: UIViewController {
         networkManager.request() {
             success, result in
             if success {
-                print(result)
+           //     print(result)
+                self.map(result!)
+                
             }
         }
     }
     
+    private func map(_ data: [Any]) {
+        for stockData in data {
+            if let stockValues = (stockData as? String)?.components(separatedBy: ",") {
+                let date = Date(timeIntervalSince1970: Double(stockValues[0])!)
+                let item = StockItem(timeStamp: date, open: Double(stockValues[1]) ?? 0, high: Double(stockValues[2]) ?? 0, low: Double(stockValues[3]) ?? 0, close: Double(stockValues[4]) ?? 0, volume: Double(stockValues[5]) ?? 0)
+                stockItems.append(item)
+            } else {
+                print("error in parsing data")
+            }
+        }
+        print(stockItems)
+    }
+    
+    
     private func parse(_ data: String) {
         let rows = data.components(separatedBy: ",")
-        testLabel.text = ""
-        
-        testLabel.blink()
-        testLabel.text = rows[3]
-        
+                
         csvData.append(rows)
         print(csvData)
     }
