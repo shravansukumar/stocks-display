@@ -16,8 +16,6 @@ class CakeLandingViewController: UIViewController {
     @IBOutlet var tableView: UITableView!
     
     // MARK: - Constants and variables
-    var manager: SocketManager!
-    var socket: SocketIOClient!
     var stockItems = [StockItem]()
     var liveData: String?
     let networkManager = NetworkManager()
@@ -36,6 +34,7 @@ class CakeLandingViewController: UIViewController {
         tableView.registerNib(viewClass: CakeLiveStocksTableViewCell.self)
         tableView.registerNib(viewClass: CakeHistoricalTableViewCell.self)
         tableView.registerNib(viewClass: CakeSelectTimelineTableViewCell.self)
+        tableView.registerNib(viewClass: CakeStockDataTableViewCell.self)
         tableView.tableFooterView = UIView()
     }
     
@@ -75,34 +74,39 @@ class CakeLandingViewController: UIViewController {
 // MARK: - UITableViewDataSource
 extension CakeLandingViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return section == 0 ? 3 : 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch indexPath.row {
-        case 0:
-        let stocksCell = tableView.dequeueReusableCell(tableViewCellClass: CakeLiveStocksTableViewCell.self)
-        if let data = liveData {
-            stocksCell.liveStocksLabel.text = "$ " + data
-        }
-        return stocksCell
-            
-            
-        case 1:
-            let graphCell = tableView.dequeueReusableCell(tableViewCellClass: CakeHistoricalTableViewCell.self)
-            if stockItems.count > 0 {
-                graphCell.drawGraph(for: stockItems)
+        if indexPath.section == 0 {
+            switch indexPath.row {
+            case 0:
+                let stocksCell = tableView.dequeueReusableCell(tableViewCellClass: CakeLiveStocksTableViewCell.self)
+                if let data = liveData {
+                    stocksCell.liveStocksLabel.text = "$ " + data
+                }
+                return stocksCell
+                
+                
+            case 1:
+                let graphCell = tableView.dequeueReusableCell(tableViewCellClass: CakeHistoricalTableViewCell.self)
+                if stockItems.count > 0 {
+                    graphCell.drawGraph(for: stockItems)
+                }
+                return graphCell
+                
+            default:
+                let timeLineCell = tableView.dequeueReusableCell(tableViewCellClass: CakeSelectTimelineTableViewCell.self)
+                timeLineCell.separatorInset = UIEdgeInsetsMake(0, 0, 0, UIScreen.main.bounds.width)
+                return timeLineCell
             }
-            return graphCell
-            
-        default:
-            let timeLineCell = tableView.dequeueReusableCell(tableViewCellClass: CakeSelectTimelineTableViewCell.self)
-            timeLineCell.separatorInset = UIEdgeInsetsMake(0, 0, 0, UIScreen.main.bounds.width)
-            return timeLineCell
+        } else {
+            let dataCell = tableView.dequeueReusableCell(tableViewCellClass: CakeStockDataTableViewCell.self)
+            return dataCell
         }
     }
 }

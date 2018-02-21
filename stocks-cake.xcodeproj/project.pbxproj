@@ -16,6 +16,10 @@
 		A42A9ACB203DE128007A9147 /* CakeSelectTimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42A9AC9203DE128007A9147 /* CakeSelectTimelineTableViewCell.swift */; };
 		A42A9ACC203DE128007A9147 /* CakeSelectTimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A42A9ACA203DE128007A9147 /* CakeSelectTimelineTableViewCell.xib */; };
 		A42A9AD0203DEB20007A9147 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42A9ACF203DEB20007A9147 /* SocketIOManager.swift */; };
+		A42A9AD2203DF961007A9147 /* CakeCommonView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A42A9AD1203DF961007A9147 /* CakeCommonView.xib */; };
+		A42A9AD4203DFAF8007A9147 /* CakeCommonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42A9AD3203DFAF8007A9147 /* CakeCommonView.swift */; };
+		A42A9AD9203DFB98007A9147 /* CakeStockDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42A9AD7203DFB98007A9147 /* CakeStockDataTableViewCell.swift */; };
+		A42A9ADA203DFB98007A9147 /* CakeStockDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A42A9AD8203DFB98007A9147 /* CakeStockDataTableViewCell.xib */; };
 		A441BCB2203C1AD0003D0CEF /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441BCB1203C1AD0003D0CEF /* URLManager.swift */; };
 		A441BCB6203C3B40003D0CEF /* StockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441BCB5203C3B40003D0CEF /* StockItem.swift */; };
 		A441BCB9203C8B07003D0CEF /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441BCB8203C8B07003D0CEF /* Utility.swift */; };
@@ -38,6 +42,10 @@
 		A42A9AC9203DE128007A9147 /* CakeSelectTimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeSelectTimelineTableViewCell.swift; sourceTree = "<group>"; };
 		A42A9ACA203DE128007A9147 /* CakeSelectTimelineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CakeSelectTimelineTableViewCell.xib; sourceTree = "<group>"; };
 		A42A9ACF203DEB20007A9147 /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
+		A42A9AD1203DF961007A9147 /* CakeCommonView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CakeCommonView.xib; sourceTree = "<group>"; };
+		A42A9AD3203DFAF8007A9147 /* CakeCommonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeCommonView.swift; sourceTree = "<group>"; };
+		A42A9AD7203DFB98007A9147 /* CakeStockDataTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeStockDataTableViewCell.swift; sourceTree = "<group>"; };
+		A42A9AD8203DFB98007A9147 /* CakeStockDataTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CakeStockDataTableViewCell.xib; sourceTree = "<group>"; };
 		A441BCB1203C1AD0003D0CEF /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
 		A441BCB5203C3B40003D0CEF /* StockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItem.swift; sourceTree = "<group>"; };
 		A441BCB8203C8B07003D0CEF /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -123,6 +131,24 @@
 			path = "Select Timeline";
 			sourceTree = "<group>";
 		};
+		A42A9AD5203DFAFF007A9147 /* Common View */ = {
+			isa = PBXGroup;
+			children = (
+				A42A9AD1203DF961007A9147 /* CakeCommonView.xib */,
+				A42A9AD3203DFAF8007A9147 /* CakeCommonView.swift */,
+			);
+			path = "Common View";
+			sourceTree = "<group>";
+		};
+		A42A9AD6203DFB6B007A9147 /* Stock Data */ = {
+			isa = PBXGroup;
+			children = (
+				A42A9AD7203DFB98007A9147 /* CakeStockDataTableViewCell.swift */,
+				A42A9AD8203DFB98007A9147 /* CakeStockDataTableViewCell.xib */,
+			);
+			path = "Stock Data";
+			sourceTree = "<group>";
+		};
 		A441BCB3203C20D0003D0CEF /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +163,7 @@
 			children = (
 				A441BCB5203C3B40003D0CEF /* StockItem.swift */,
 				A441BCB8203C8B07003D0CEF /* Utility.swift */,
+				A42A9AD5203DFAFF007A9147 /* Common View */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -147,6 +174,7 @@
 				A441BCBF203CA1FC003D0CEF /* Live  */,
 				A441BCC4203CA237003D0CEF /* Historical */,
 				A42A9ACE203DE13B007A9147 /* Select Timeline */,
+				A42A9AD6203DFB6B007A9147 /* Stock Data */,
 			);
 			path = "TableView Cells";
 			sourceTree = "<group>";
@@ -231,9 +259,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A42A9AD2203DF961007A9147 /* CakeCommonView.xib in Resources */,
 				A42A9ACC203DE128007A9147 /* CakeSelectTimelineTableViewCell.xib in Resources */,
 				A40C402C2038687D004ECCE7 /* LaunchScreen.storyboard in Resources */,
 				A441BCC3203CA22A003D0CEF /* CakeHistoricalTableViewCell.xib in Resources */,
+				A42A9ADA203DFB98007A9147 /* CakeStockDataTableViewCell.xib in Resources */,
 				A40C40292038687D004ECCE7 /* Assets.xcassets in Resources */,
 				A441BCBE203C8B9F003D0CEF /* CakeLiveStocksTableViewCell.xib in Resources */,
 				A40C40272038687D004ECCE7 /* Main.storyboard in Resources */,
@@ -307,6 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A42A9AD9203DFB98007A9147 /* CakeStockDataTableViewCell.swift in Sources */,
 				A496E44F203C13BC00A81E63 /* NetworkManager.swift in Sources */,
 				A40C40242038687D004ECCE7 /* CakeLandingViewController.swift in Sources */,
 				A441BCB9203C8B07003D0CEF /* Utility.swift in Sources */,
@@ -316,6 +347,7 @@
 				A441BCB6203C3B40003D0CEF /* StockItem.swift in Sources */,
 				A441BCB2203C1AD0003D0CEF /* URLManager.swift in Sources */,
 				A42A9ACB203DE128007A9147 /* CakeSelectTimelineTableViewCell.swift in Sources */,
+				A42A9AD4203DFAF8007A9147 /* CakeCommonView.swift in Sources */,
 				A441BCC2203CA22A003D0CEF /* CakeHistoricalTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
