@@ -9,7 +9,7 @@
 import Foundation
 
 struct URLManager {
-    let base = "http://kaboom.rksv.net"
+    let base = "http://kaboom.rksv.net/"
     let historicalData = "historical/"
-    let context = "/api/"
+    let context = "api/"
 }

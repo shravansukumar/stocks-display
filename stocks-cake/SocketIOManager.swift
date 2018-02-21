@@ -23,19 +23,24 @@ final class SocketIOManager {
     private var socket: SocketIOClient!
     weak var delegate: LiveDataAvailable?
     
-    // MARK: - Variables
-    private init() {
-        
-    }
+    // MARK: - Lifecycle
+    private init() { }
 
+    // MARK: - Public Methods
     func connect() {
-        manager = SocketManager(socketURL: URL(string: "http://kaboom.rksv.net/")!, config: [.log(true), .compress])
+        manager = SocketManager(socketURL: URL(string: URLManager().base)!, config: [.log(true), .compress])
         socket = manager.socket(forNamespace: "/watch")
         socket.connect()
         socket.onAny {print("Got event: \($0.event), with items: \(String(describing: $0.items))")}
         addCallbacks()
     }
     
+    func disconnect() {
+        self.socket.emit("unsub", ["state" : false])
+        socket.disconnect()
+    }
+    
+    // MARK: - Private Methods
     private func addCallbacks() {
         socket.on("data", callback: { (data, ack) in
             print(data)
@@ -50,18 +55,11 @@ final class SocketIOManager {
             }
         })
         
-        
         socket.on("error", callback: { (data, ack) in
             print(data)
             print(ack)
             
         })
-        
-        socket.on(clientEvent: .disconnect) { (data, ack) in
-            print(data)
-            print(ack)
-            
-        }
         
         socket.on("connect", callback: { (data, ack) in
             print(data)
@@ -70,9 +68,5 @@ final class SocketIOManager {
             self.socket.emit("sub", ["state" : true])
             
         })
-    }
-    
-    func disconnect() {
-        socket.disconnect()
     }
 }
