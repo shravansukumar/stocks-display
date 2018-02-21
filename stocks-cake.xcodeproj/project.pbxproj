@@ -13,6 +13,9 @@
 		A40C40272038687D004ECCE7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40C40252038687D004ECCE7 /* Main.storyboard */; };
 		A40C40292038687D004ECCE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A40C40282038687D004ECCE7 /* Assets.xcassets */; };
 		A40C402C2038687D004ECCE7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40C402A2038687D004ECCE7 /* LaunchScreen.storyboard */; };
+		A42A9ACB203DE128007A9147 /* CakeSelectTimelineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42A9AC9203DE128007A9147 /* CakeSelectTimelineTableViewCell.swift */; };
+		A42A9ACC203DE128007A9147 /* CakeSelectTimelineTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A42A9ACA203DE128007A9147 /* CakeSelectTimelineTableViewCell.xib */; };
+		A42A9AD0203DEB20007A9147 /* SocketIOManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A42A9ACF203DEB20007A9147 /* SocketIOManager.swift */; };
 		A441BCB2203C1AD0003D0CEF /* URLManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441BCB1203C1AD0003D0CEF /* URLManager.swift */; };
 		A441BCB6203C3B40003D0CEF /* StockItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441BCB5203C3B40003D0CEF /* StockItem.swift */; };
 		A441BCB9203C8B07003D0CEF /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A441BCB8203C8B07003D0CEF /* Utility.swift */; };
@@ -32,6 +35,9 @@
 		A40C40282038687D004ECCE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A40C402B2038687D004ECCE7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A40C402D2038687D004ECCE7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A42A9AC9203DE128007A9147 /* CakeSelectTimelineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CakeSelectTimelineTableViewCell.swift; sourceTree = "<group>"; };
+		A42A9ACA203DE128007A9147 /* CakeSelectTimelineTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CakeSelectTimelineTableViewCell.xib; sourceTree = "<group>"; };
+		A42A9ACF203DEB20007A9147 /* SocketIOManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocketIOManager.swift; sourceTree = "<group>"; };
 		A441BCB1203C1AD0003D0CEF /* URLManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLManager.swift; sourceTree = "<group>"; };
 		A441BCB5203C3B40003D0CEF /* StockItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockItem.swift; sourceTree = "<group>"; };
 		A441BCB8203C8B07003D0CEF /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -97,6 +103,7 @@
 				A40C40212038687D004ECCE7 /* AppDelegate.swift */,
 				A40C40252038687D004ECCE7 /* Main.storyboard */,
 				A40C40232038687D004ECCE7 /* CakeLandingViewController.swift */,
+				A42A9ACF203DEB20007A9147 /* SocketIOManager.swift */,
 				A441BCBA203C8B71003D0CEF /* TableView Cells */,
 				A441BCB7203C8AF0003D0CEF /* Utility */,
 				A441BCB3203C20D0003D0CEF /* Network */,
@@ -105,6 +112,15 @@
 				A40C402D2038687D004ECCE7 /* Info.plist */,
 			);
 			path = "stocks-cake";
+			sourceTree = "<group>";
+		};
+		A42A9ACE203DE13B007A9147 /* Select Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				A42A9AC9203DE128007A9147 /* CakeSelectTimelineTableViewCell.swift */,
+				A42A9ACA203DE128007A9147 /* CakeSelectTimelineTableViewCell.xib */,
+			);
+			path = "Select Timeline";
 			sourceTree = "<group>";
 		};
 		A441BCB3203C20D0003D0CEF /* Network */ = {
@@ -130,6 +146,7 @@
 			children = (
 				A441BCBF203CA1FC003D0CEF /* Live  */,
 				A441BCC4203CA237003D0CEF /* Historical */,
+				A42A9ACE203DE13B007A9147 /* Select Timeline */,
 			);
 			path = "TableView Cells";
 			sourceTree = "<group>";
@@ -214,6 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A42A9ACC203DE128007A9147 /* CakeSelectTimelineTableViewCell.xib in Resources */,
 				A40C402C2038687D004ECCE7 /* LaunchScreen.storyboard in Resources */,
 				A441BCC3203CA22A003D0CEF /* CakeHistoricalTableViewCell.xib in Resources */,
 				A40C40292038687D004ECCE7 /* Assets.xcassets in Resources */,
@@ -293,9 +311,11 @@
 				A40C40242038687D004ECCE7 /* CakeLandingViewController.swift in Sources */,
 				A441BCB9203C8B07003D0CEF /* Utility.swift in Sources */,
 				A441BCBD203C8B9F003D0CEF /* CakeLiveStocksTableViewCell.swift in Sources */,
+				A42A9AD0203DEB20007A9147 /* SocketIOManager.swift in Sources */,
 				A40C40222038687D004ECCE7 /* AppDelegate.swift in Sources */,
 				A441BCB6203C3B40003D0CEF /* StockItem.swift in Sources */,
 				A441BCB2203C1AD0003D0CEF /* URLManager.swift in Sources */,
+				A42A9ACB203DE128007A9147 /* CakeSelectTimelineTableViewCell.swift in Sources */,
 				A441BCC2203CA22A003D0CEF /* CakeHistoricalTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

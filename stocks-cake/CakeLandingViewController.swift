@@ -12,42 +12,40 @@ import Charts
 
 class CakeLandingViewController: UIViewController {
     
+    // MARK: - IBOutlets
     @IBOutlet var tableView: UITableView!
     
-    
+    // MARK: - Constants and variables
     var manager: SocketManager!
     var socket: SocketIOClient!
     var stockItems = [StockItem]()
     var liveData: String?
     let networkManager = NetworkManager()
 
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupSockets()
-        fetchData()
+
         setupTableView()
-       // setDataCount()
+        SocketIOManager.shared.delegate = self
+        fetchData()
     }
     
-    
-    
+    // MARK: - Private Methods
     private func setupTableView() {
         tableView.registerNib(viewClass: CakeLiveStocksTableViewCell.self)
         tableView.registerNib(viewClass: CakeHistoricalTableViewCell.self)
+        tableView.registerNib(viewClass: CakeSelectTimelineTableViewCell.self)
         tableView.tableFooterView = UIView()
-        
     }
-    
-
     
     private func fetchData() {
         networkManager.request() {
             success, result in
             if success {
-           //     print(result)
                 self.map(result!)
-                
+            } else {
+                debugPrint("Not able to fetch values")
             }
         }
     }
@@ -64,7 +62,6 @@ class CakeLandingViewController: UIViewController {
         }
         stockItems.sort { $0.timeStamp < $1.timeStamp }
        tableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .none)
-        
     }
     
     private func parse(_ data: String) {
@@ -73,60 +70,16 @@ class CakeLandingViewController: UIViewController {
         tableView.reloadRows(at: [IndexPath(row: 0, section: 0)], with: .none)
         
     }
-
-    
-    
-    private func setupSockets() {
-        manager = SocketManager(socketURL: URL(string: "http://kaboom.rksv.net/")!, config: [.log(true), .compress])
-        
-        socket = manager.socket(forNamespace: "/watch")
-        
-        socket.onAny {print("Got event: \($0.event), with items: \(String(describing: $0.items))")}
-        
-        socket.on("data", callback: { (data, ack) in
-            print(data)
-            print(ack)
-            
-            if let firstData = data.first as? String {
-                self.parse(firstData)
-            }
-            
-            DispatchQueue.global(qos: .background).asyncAfter(deadline: .now() + 1.0) {
-                ack.with(1)
-            }
-        })
-        
-
-        socket.on("error", callback: { (data, ack) in
-            print(data)
-            print(ack)
-            
-        })
-        
-        socket.on(clientEvent: .disconnect) { (data, ack) in
-            print(data)
-            print(ack)
-            
-        }
-        
-        socket.on("connect", callback: { (data, ack) in
-            print(data)
-            print(ack)
-
-            self.socket.emit("sub", ["state" : true])
-
-        })
-        socket.connect()
-    }
 }
 
+// MARK: - UITableViewDataSource
 extension CakeLandingViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -134,17 +87,30 @@ extension CakeLandingViewController: UITableViewDataSource {
         case 0:
         let stocksCell = tableView.dequeueReusableCell(tableViewCellClass: CakeLiveStocksTableViewCell.self)
         if let data = liveData {
-            stocksCell.liveStocksLabel.text = data
+            stocksCell.liveStocksLabel.text = "$ " + data
         }
         return stocksCell
             
-        default:
+            
+        case 1:
             let graphCell = tableView.dequeueReusableCell(tableViewCellClass: CakeHistoricalTableViewCell.self)
             if stockItems.count > 0 {
                 graphCell.drawGraph(for: stockItems)
             }
             return graphCell
+            
+        default:
+            let timeLineCell = tableView.dequeueReusableCell(tableViewCellClass: CakeSelectTimelineTableViewCell.self)
+            timeLineCell.separatorInset = UIEdgeInsetsMake(0, 0, 0, UIScreen.main.bounds.width)
+            return timeLineCell
         }
+    }
+}
+
+// MARK: - LiveDataAvailable
+extension CakeLandingViewController: LiveDataAvailable {
+    func stock(data: String) {
+        parse(data)
     }
 }
 
