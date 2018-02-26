@@ -61,7 +61,7 @@ class CakeLandingViewController: UIViewController {
             }
         }
         stockItems.sort { $0.timeStamp < $1.timeStamp }
-        mappedItem = getValues(data: stockItems)        
+        mappedItem = getStockHighlights(data: stockItems)
         tableView.reloadData()
     }
 
@@ -73,7 +73,7 @@ class CakeLandingViewController: UIViewController {
      close: closing value
      volume: total stock volume
      */
-    private func getValues(data : [StockItem]) -> StockItem {
+    private func getStockHighlights(data : [StockItem]) -> StockItem {
         return  data.reduce(data.first!) { (result, nextStockItem) -> StockItem in
             let minimum =  min(result.low, nextStockItem.low)
             let maximum = max(result.high, nextStockItem.high)

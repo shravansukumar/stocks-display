@@ -19,9 +19,20 @@ class CakeSelectTimelineTableViewCell: UITableViewCell {
     }
     
     private func setRounding() {
-        for button in buttonStackView.subviews {
-            (button as! UIButton).layer.cornerRadius = 2.0
+        for(index, button) in buttonStackView.subviews.enumerated() {
+            if let thisButton = button as? UIButton {
+                thisButton.layer.cornerRadius = 2.0
+                thisButton.tag = index
+                thisButton.addTarget(self, action: #selector(timelineButtonTapped(_:)), for: .touchUpInside)
+            }
         }
     }
     
+    @objc func timelineButtonTapped(_ sender: UIButton) {
+        print("button tapped at index: \(sender.tag)")
+        for button in buttonStackView.subviews as! [UIButton] {
+            button.backgroundColor = .white
+        }
+        sender.backgroundColor = .red
+    }
 }
