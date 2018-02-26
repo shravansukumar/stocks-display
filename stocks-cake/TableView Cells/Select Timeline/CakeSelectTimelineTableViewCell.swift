@@ -9,16 +9,22 @@
 import UIKit
 
 class CakeSelectTimelineTableViewCell: UITableViewCell {
-
+    
+    // MARK: - IBOutlets
     @IBOutlet var buttonStackView: UIStackView!
     
+    // MARK: - Constants
+    let color = UIColor(red: 255.0/255.0, green: 102.0/255.0, blue: 102.0/255.0, alpha: 1.0)
+    
+    // MARK: - Lifecycle
     override func layoutSubviews() {
         super.layoutSubviews()
         
-        setRounding()
+        setupButtons()
     }
     
-    private func setRounding() {
+    // MARK: - Private Methods
+    private func setupButtons() {
         for(index, button) in buttonStackView.subviews.enumerated() {
             if let thisButton = button as? UIButton {
                 thisButton.layer.cornerRadius = 2.0
@@ -32,7 +38,9 @@ class CakeSelectTimelineTableViewCell: UITableViewCell {
         print("button tapped at index: \(sender.tag)")
         for button in buttonStackView.subviews as! [UIButton] {
             button.backgroundColor = .white
+            sender.titleLabel?.textColor = .black
         }
-        sender.backgroundColor = .red
+        sender.backgroundColor = color
+        sender.titleLabel?.textColor = .white
     }
 }
