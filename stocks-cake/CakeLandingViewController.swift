@@ -19,6 +19,7 @@ class CakeLandingViewController: UIViewController {
     var stockItems = [StockItem]()
     var liveData: String?
     let networkManager = NetworkManager()
+    var mappedItem : StockItem?
 
     // MARK: - Lifecycle
     override func viewDidLoad() {
@@ -60,7 +61,27 @@ class CakeLandingViewController: UIViewController {
             }
         }
         stockItems.sort { $0.timeStamp < $1.timeStamp }
-       tableView.reloadRows(at: [IndexPath(row: 1, section: 0)], with: .none)
+        mappedItem = getValues(data: stockItems)        
+        tableView.reloadData()
+    }
+
+    /*
+     A method for creating an intermediate object, to map all the values
+     open: Contains the opening price
+     high: contains the maximum stock price
+     low: minimum value
+     close: closing value
+     volume: total stock volume
+     */
+    private func getValues(data : [StockItem]) -> StockItem {
+        return  data.reduce(data.first!) { (result, nextStockItem) -> StockItem in
+            let minimum =  min(result.low, nextStockItem.low)
+            let maximum = max(result.high, nextStockItem.high)
+            let open = data.first!.open
+            let close = data.last!.close
+            let totalVolume = result.volume + nextStockItem.volume
+            return StockItem(timeStamp: Date(), open: open!, high: maximum, low: minimum, close: close!, volume: totalVolume)
+        }
     }
     
     private func parse(_ data: String) {
@@ -78,7 +99,7 @@ extension CakeLandingViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return section == 0 ? 3 : 4
+        return section == 0 ? 3 : 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -106,6 +127,25 @@ extension CakeLandingViewController: UITableViewDataSource {
             }
         } else {
             let dataCell = tableView.dequeueReusableCell(tableViewCellClass: CakeStockDataTableViewCell.self)
+            switch indexPath.row {
+            case 0:
+                dataCell.leftCommonView.typeLabel.text = "Day High"
+                dataCell.leftCommonView.valueLabel.text = String(mappedItem?.high ?? 0)
+                dataCell.rightCommonView.typeLabel.text = "Day Low"
+                dataCell.rightCommonView.valueLabel.text = String(mappedItem?.low ?? 0)
+                
+            case 1:
+                dataCell.leftCommonView.typeLabel.text = "Open value"
+                dataCell.leftCommonView.valueLabel.text = String(mappedItem?.open ?? 0)
+                dataCell.rightCommonView.typeLabel.text = "Close value"
+                dataCell.rightCommonView.valueLabel.text = String(mappedItem?.close ?? 0)
+                
+            default:
+                dataCell.leftCommonView.typeLabel.text = "Volume"
+                dataCell.leftCommonView.valueLabel.text = String(mappedItem?.volume ?? 0)
+                dataCell.rightCommonView.typeLabel.text = "Avg Volume"
+                dataCell.rightCommonView.valueLabel.text = String((mappedItem?.volume) ?? 0 / Double(stockItems.count))
+            }
             return dataCell
         }
     }
